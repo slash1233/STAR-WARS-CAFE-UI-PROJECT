@@ -1,0 +1,135 @@
+﻿<Window x:Class="CAFE_MENU_DISCOUNT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CAFE_MENU_DISCOUNT" 
+        xmlns:viewModel="clr-namespace:CAFE_MENU_DISCOUNT.MVM.ViewModel" 
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Height="600" Width="920">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#273537"
+            CornerRadius="20">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Text="CAFE MENU"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="22"
+                   FontFamily="/Fonts/#Poppins"/>
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content=" Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+
+                <RadioButton Content=" Drinks"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding DiscoveryViewCommand}"/>
+
+
+                <RadioButton Content="News"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=""
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=""
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=" "
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=" "
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=""
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content="All rights reserved &#x0a; to the Yağız Molo"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+                <RadioButton Content=" Copyright © 2022"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource ManuelHomeButton}"
+                             Command="{Binding NewsViewCommand}"/>
+
+            </StackPanel>
+
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextbox}"/>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+        </Grid>
+        
+    </Border>
+    
+
+</Window>
